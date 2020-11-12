@@ -16,17 +16,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import purple from '@material-ui/core/colors/purple'
-import green from '@material-ui/core/colors/purple'
-
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/purple";
+import backgroundImage from "../assets/img/side-background.png";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
- 
-  
-    
-    root: {
+  root: {
     display: "flex",
   },
   drawer: {
@@ -39,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      background: "#1e2a3c"
     },
   },
   menuButton: {
@@ -50,10 +48,12 @@ const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    background: 'rgba(0,0,0,0.4)',
-    color: 'white',
+    color: "white",
     width: drawerWidth,
+    backgroundImage:`linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
+    // backgroundImage: `url(${backgroundImage})`,
   },
+  
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -70,29 +70,21 @@ function Sidebar(props) {
     setMobileOpen(!mobileOpen);
   };
 
-    // Side bar links
+  // Side bar links
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        <ListItem>
-            gucio
-        </ListItem>
-        <ListItem>
-            maja
-        </ListItem>
-        <ListItem>
-            donald
-        </ListItem>
-            
-            
+        <ListItem>gucio</ListItem>
+        <ListItem>maja</ListItem>
+        <ListItem>donald</ListItem>
       </List>
       <Divider />
       <List>
         <div>second</div>
       </List>
-    </div>
+      </div>
   );
 
   const container =
@@ -100,7 +92,7 @@ function Sidebar(props) {
 
   return (
     <div className={classes.root}>
-    {/* top bar */}
+      {/* top bar */}
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
@@ -119,7 +111,7 @@ function Sidebar(props) {
         </Toolbar>
       </AppBar>
 
-    {/* side bar */}
+      {/* side bar */}
       <nav className={classes.drawer} aria-label="sidebar">
         <Hidden smUp implementation="css">
           <Drawer
@@ -159,7 +151,5 @@ function Sidebar(props) {
     </div>
   );
 }
-
-
 
 export default Sidebar;
