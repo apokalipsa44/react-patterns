@@ -19,14 +19,18 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/purple";
 import backgroundImage from "../assets/img/side-background.png";
-import DraftsIcon from '@material-ui/icons/Drafts';
+import DraftsIcon from "@material-ui/icons/Drafts";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      background: "#1e2a3c"
+      background: "#1e2a3c",
     },
   },
   menuButton: {
@@ -54,10 +58,10 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     color: "white",
     width: drawerWidth,
-    // backgroundImage:`linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
+    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
     // backgroundImage: `url(${backgroundImage})`,
   },
-  
+
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -83,26 +87,52 @@ function Sidebar(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
-        <ListItem button color="primary">gucio</ListItem>
-        <ListItem button>maja</ListItem>
-        <ListItem button>donald</ListItem>
-      </List>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>Hooks</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            <ListItem button color="primary">
+              gucio
+            </ListItem>
+            <ListItem button>maja</ListItem>
+            <ListItem button>donald</ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+
       <Divider />
-      <List component="nav" aria-label="main mailbox folders">
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="Inbox" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Drafts" />
-        </ListItem>
-      </List>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>HOC's</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List component="nav" aria-label="main mailbox folders">
+            <ListItem button>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <DraftsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Drafts" />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+
       <Divider />
       <List component="nav" aria-label="secondary mailbox folders">
         <ListItem button>
@@ -111,9 +141,8 @@ function Sidebar(props) {
         <ListItemLink href="#simple-list">
           <ListItemText primary="Spam" />
         </ListItemLink>
-        
       </List>
-      </div>
+    </div>
   );
 
   const container =
