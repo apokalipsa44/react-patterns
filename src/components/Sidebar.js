@@ -19,12 +19,16 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/purple";
 import backgroundImage from "../assets/img/side-background.png";
+import DraftsIcon from '@material-ui/icons/Drafts';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -50,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     color: "white",
     width: drawerWidth,
-    backgroundImage:`linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
+    // backgroundImage:`linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
     // backgroundImage: `url(${backgroundImage})`,
   },
   
@@ -59,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
+
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 
 function Sidebar(props) {
   const { window } = props;
@@ -76,13 +84,34 @@ function Sidebar(props) {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        <ListItem>gucio</ListItem>
-        <ListItem>maja</ListItem>
-        <ListItem>donald</ListItem>
+        <ListItem button color="primary">gucio</ListItem>
+        <ListItem button>maja</ListItem>
+        <ListItem button>donald</ListItem>
       </List>
       <Divider />
-      <List>
-        <div>second</div>
+      <List component="nav" aria-label="main mailbox folders">
+        <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <DraftsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Drafts" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List component="nav" aria-label="secondary mailbox folders">
+        <ListItem button>
+          <ListItemText primary="Trash" />
+        </ListItem>
+        <ListItemLink href="#simple-list">
+          <ListItemText primary="Spam" />
+        </ListItemLink>
+        
       </List>
       </div>
   );
