@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -11,14 +10,13 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/purple";
-import backgroundImage from "../assets/img/side-background.png";
+import backgroundImage from "../../assets/img/side-background.png";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -152,7 +150,7 @@ function Sidebar(props) {
     <div className={classes.root}>
       {/* top bar */}
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      {/* <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -167,7 +165,7 @@ function Sidebar(props) {
             React patterns
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       {/* side bar */}
       <nav className={classes.drawer} aria-label="sidebar">
