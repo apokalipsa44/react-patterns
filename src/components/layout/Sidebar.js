@@ -22,8 +22,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import UseStateView from '../../views/hooks/useStateView'
-
+import UseStateView from "../../views/hooks/useStateView";
 
 const drawerWidth = 240;
 
@@ -34,10 +33,20 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  // zIndex: {
+  //   mobileStepper: 1000,
+  //   speedDial: 1050,
+  //   appBar: 1800,
+  //   drawer: 1200,
+  //   modal: 1300,
+  //   snackbar: 1400,
+  //   tooltip: 1500,
+  // },
   drawer: {
     [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       flexShrink: 0,
+      zIndex:1000,
     },
   },
   appBar: {
@@ -45,6 +54,8 @@ const useStyles = makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       background: "#1e2a3c",
+      // zIndex: 1500,
+      zIndex: theme.zIndex.drawer + 1,
     },
   },
   menuButton: {
@@ -58,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     color: "white",
     width: drawerWidth,
-    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
+    // backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(${backgroundImage})`,
     // backgroundImage: `url(${backgroundImage})`,
   },
 
