@@ -24,6 +24,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import UseStateView from "../../views/hooks/useStateView";
 import MenuLinks from "./MenuLinks"
+import MainPage from "./MainPage"
 
 const drawerWidth = 240;
 
@@ -109,7 +110,7 @@ function Sidebar(props) {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            {/* <MenuLinks></MenuLinks> */}
+            <MenuLinks></MenuLinks>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -213,7 +214,7 @@ function Sidebar(props) {
 
         {/* page content */}
         {/* <h2>sssd</h2> */}
-        <UseStateView></UseStateView>
+        <MainPage></MainPage>
       </main>
     </div>
   );

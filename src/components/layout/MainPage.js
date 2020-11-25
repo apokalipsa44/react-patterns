@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <Switch>
       <Route path="/hooks/useState" exact>
-        {UseStateView}
+        {UseStateView()}
       </Route>
       <Route path="/hooks/useEffect" exact>
         {UseEffectView}
