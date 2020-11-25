@@ -23,6 +23,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import UseStateView from "../../views/hooks/useStateView";
+import MenuLinks from "./MenuLinks"
 
 const drawerWidth = 240;
 
@@ -108,11 +109,7 @@ function Sidebar(props) {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItem button color="primary">
-              gucio
-            </ListItem>
-            <ListItem button>maja</ListItem>
-            <ListItem button>donald</ListItem>
+            {/* <MenuLinks></MenuLinks> */}
           </List>
         </AccordionDetails>
       </Accordion>
