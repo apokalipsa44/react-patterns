@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Container } from "@material-ui/core";
 
 function useMemoView() {
-    return (
-        <div>
-            useMemoView
-        </div>
-    )
+  return <Container>useMemoView</Container>;
 }
 
-export default useMemoView
+export default useMemoView;

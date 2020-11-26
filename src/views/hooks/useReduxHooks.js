@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Container } from "@material-ui/core";
+
 
 function useReduxHooks() {
     return (
-        <div>
+        <Container>
             useReduxHooks
-        </div>
+        </Container>
     )
 }
 

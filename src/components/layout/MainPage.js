@@ -1,3 +1,4 @@
+import { Box, Spacing } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CustomHooksView from "../../views/hooks/customHooksView";
@@ -9,7 +10,8 @@ import UseStateView from "../../views/hooks/useStateView";
 
 function MainPage() {
   return (
-    <Switch>
+    <Box marginLeft='240px' marginTop='120px'>
+      <Switch>
       <Route path="/hooks/useState" exact>
         {UseStateView()}
       </Route>
@@ -29,6 +31,8 @@ function MainPage() {
         {CustomHooksView}
       </Route>
     </Switch>
+    </Box>
+    
   );
 }
 

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Container } from "@material-ui/core";
 
 function useEffectView() {
-    return (
-        <div>
-            useEffectView
-        </div>
-    )
+  return (
+    <Container>
+      useEffectViewffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    </Container>
+  );
 }
 
-export default useEffectView
+export default useEffectView;
