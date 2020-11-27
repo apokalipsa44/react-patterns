@@ -7,6 +7,7 @@ import HooksDescription from "../../components/descriptions/HooksDescription";
 
 function useEffectView() {
   SyntaxHighlighter.registerLanguage("javascript", js);
+  
   const useEffectCode =
     "useEffect(() => {\n" +
     "      // code to be executed\n" +

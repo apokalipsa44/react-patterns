@@ -3,15 +3,14 @@ import { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Box, Container } from "@material-ui/core";
-import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
-import { lioshi } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import HooksDescription from "../../components/descriptions/HooksDescription";
 
 function useStateView() {
   const [count, setCount] = useState(0);
 
-  SyntaxHighlighter.registerLanguage("javascript", js);
+  
 
   const counterCode =
     'import React from "react";\n' +
@@ -45,7 +44,7 @@ function useStateView() {
         basicHookCode={useStateCode}
         basicHookDescription={useStateDescription}
       ></HooksDescription>
-    <Box margin='50px'></Box>
+    <Box margin='150px'></Box>
       <Container>
         <Button
           display="inline"
@@ -76,7 +75,7 @@ function useStateView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={lioshi}>{counterCode}</SyntaxHighlighter>
+        <SyntaxHighlighter style={darcula} language="javascript">{counterCode}</SyntaxHighlighter>
       </Container>
     </div>
   );
