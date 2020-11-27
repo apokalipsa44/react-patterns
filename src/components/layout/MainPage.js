@@ -16,7 +16,7 @@ function MainPage() {
         {UseStateView()}
       </Route>
       <Route path="/hooks/useEffect" exact>
-        {UseEffectView}
+        {UseEffectView()}
       </Route>
       <Route path="/hooks/useRedux" exact>
         {UseReduxView}
