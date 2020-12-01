@@ -29,7 +29,7 @@ function useEffectView() {
   'import React from "react";\n'+
   'import { useState, useEffect } from "react";\n'+
   '\n'+
-  'function useEffectView() {\n'+
+  'function useEffectExample() {\n'+
   '  const [responseStatus, setResponseStatus] = useState("500");\n'+
   '\n'+
   '  useEffect(() => {\n'+
@@ -119,7 +119,7 @@ function useEffectView() {
         </Button>
         <Box margin="12px"></Box>
         <Container>
-          <img src={setImage()} alt="status" width="375px" height="300px"></img>
+          <img src={setImage()} alt="status" width="475px" height="380px"></img>
         </Container>
         <SyntaxHighlighter style={darcula} language="javascript">
           {catStatusCode}

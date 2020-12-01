@@ -16,7 +16,7 @@ function useStateView() {
     'import React from "react";\n' +
     'import { useState } from "react";\n' +
     "\n" +
-    "function useStateView() {\n" +
+    "function useStateExample() {\n" +
     "  const [count, setCount] = useState(0);\n" +
     "    return (\n" +
     "    <div>\n" +
