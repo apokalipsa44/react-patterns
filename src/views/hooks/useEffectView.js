@@ -23,7 +23,8 @@ function useEffectView() {
   const useEffectDescription =
     "I'ts basicly comopnentDidMount for function components. " +
     "Function will run the code every time component get's re-rendered " +
-    "(if we leave second parameter empty), or variables passed to second parameter gets changed.";
+    "(if we leave second parameter empty), or variables passed to second parameter gets changed. "+
+    "If we don't provide second array parameter useEffect will deploy every time component gets re-rended.";
 
   const catStatusCode =
   'import React from "react";\n'+
