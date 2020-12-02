@@ -111,12 +111,12 @@ function useRefsView() {
         </Box>
         <Box ml="10px" mb="15px">
           <TextField
+            type="password"
             label="password"
             placeholder="password"
             margin="dense"
             name="password"
             inputRef={passwordInput}
-            type="text"
             onKeyDown={lastKeyDown}
             value={password}
             onChange={handleOnChange}
