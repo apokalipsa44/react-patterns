@@ -22,7 +22,7 @@ function MainPage() {
         {UseReduxView}
       </Route>
       <Route path="/hooks/useRefs" exact>
-        {UseRefsView}
+        {UseRefsView()}
       </Route>
       <Route path="/hooks/useMemo" exact>
         {UseMemoView}
