@@ -1,14 +1,24 @@
 import React from "react";
-import { useRef, useEffect, useState } from "react";
-import { Box, Button, Container, Input, TextField } from "@material-ui/core";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function useRefsView() {
-  const useRefsDescription =
-    "A way to select DOM elements generated from jsx. " +
-    "You have to pass to JSX element a ref property as a variable object defined by useRef hook function.";
+  const useRefsDescription = (
+    <Typography>
+      A way to select DOM elements generated from jsx. You have to pass to JSX
+      element a ref property as a variable object defined by useRef hook
+      function.
+    </Typography>
+  );
 
   const useRefsCode =
     "const inputElement = useRef(initialValue) \n" +
@@ -26,7 +36,7 @@ function useRefsView() {
     "  const loginBtn = useRef(null);\n" +
     "\n" +
     "  useEffect(() => {\n" +
-    "    usernameInput.current.focus();\n" +
+    "    usernameInput.current.focus();   // focuses on the element on start\n" +
     "  }, []);\n" +
     "\n" +
     "  const firstKeyDown = (e) => {\n" +

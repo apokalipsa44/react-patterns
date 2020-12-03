@@ -2,6 +2,7 @@ import { Box } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CustomHooksView from "../../views/hooks/customHooksView";
+import UseContexView from "../../views/hooks/useContexView";
 import UseEffectView from "../../views/hooks/useEffectView";
 import UseMemoView from "../../views/hooks/useMemoView";
 import UseReduxView from "../../views/hooks/useReduxHooks";
@@ -13,22 +14,25 @@ function MainPage() {
     <Box marginLeft='240px' marginTop='120px'>
       <Switch>
       <Route path="/hooks/useState" exact>
-        {UseStateView()}
+        <UseStateView></UseStateView>
       </Route>
       <Route path="/hooks/useEffect" exact>
-        {UseEffectView()}
+        <UseEffectView></UseEffectView>
       </Route>
       <Route path="/hooks/useRedux" exact>
-        {UseReduxView}
+        <UseReduxView></UseReduxView>
       </Route>
       <Route path="/hooks/useRefs" exact>
-        {UseRefsView()}
+        <UseRefsView></UseRefsView>
       </Route>
       <Route path="/hooks/useMemo" exact>
-        {UseMemoView}
+        <UseMemoView></UseMemoView>
       </Route>
       <Route path="/hooks/customHooks" exact>
-        {CustomHooksView}
+        <CustomHooksView></CustomHooksView>
+      </Route>
+      <Route path="/hooks/useContext" exact>
+        <UseContexView></UseContexView>
       </Route>
     </Switch>
     </Box>

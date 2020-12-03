@@ -3,14 +3,12 @@ import { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Box, Container } from "@material-ui/core";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 
 function useStateView() {
   const [count, setCount] = useState(0);
-
-  
 
   const counterCode =
     'import React from "react";\n' +
@@ -30,21 +28,24 @@ function useStateView() {
     "export default useStateView;";
 
   const useStateCode =
-    "const [state, setState] = useState(initialState)\n"+
+    "const [state, setState] = useState(initialState)\n" +
     "// setState() is executed to create a new state value";
 
-  const useStateDescription =
-    "Allows to manage state in function component. " +
-    "Initial state can be set as useState parameter. Every time function setState " +
-    "is executed new state is created.";
+  const useStateDescription = (
+    <Typography>
+      Allows to manage state in function component. "Initial state can be set as
+      useState parameter. Every time function setState "is executed new state is
+      created.
+    </Typography>
+  );
 
   return (
-    <div >
+    <div>
       <HooksDescription
         basicHookCode={useStateCode}
         basicHookDescription={useStateDescription}
       ></HooksDescription>
-    <Box margin='150px'></Box>
+      <Box margin="150px"></Box>
       <Container>
         <Button
           display="inline"
@@ -75,7 +76,9 @@ function useStateView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={darcula} language="javascript">{counterCode}</SyntaxHighlighter>
+        <SyntaxHighlighter style={darcula} language="javascript">
+          {counterCode}
+        </SyntaxHighlighter>
       </Container>
     </div>
   );
