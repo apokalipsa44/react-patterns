@@ -5,7 +5,7 @@ import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-function useEffectView() {
+function UseEffectView() {
   const useEffectCode =
     "useEffect(() => {\n" +
     "      // code to be executed\n" +
@@ -137,4 +137,4 @@ function useEffectView() {
   );
 }
 
-export default useEffectView;
+export default UseEffectView;

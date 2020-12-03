@@ -1,8 +1,109 @@
-import React from "react";
-import { Container } from "@material-ui/core";
+import React, { useMemo, useState } from "react";
+import { Box, Button, Container, Typography } from "@material-ui/core";
+import HooksDescription from "../../components/descriptions/HooksDescription";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-function useMemoView() {
-  return <Container>useMemoView</Container>;
+function UseMemoView() {
+  const useMemoDescription = (
+    <div>
+      <Typography>
+        Allows us to memoize the function. If a function returns same output
+        each time, there is no point to run it every time component gets
+        re-rendered. This hook can't be used when component receives props or
+        modifies the state.
+      </Typography>
+      <Typography>
+        When second array parameter is provided, memoized function is executed
+        every time that parameter gets changed.
+      </Typography>
+      <Typography>
+        Most common is to use it as shouldComponentUpdate alternative.
+      </Typography>
+    </div>
+  );
+  const useMemoCode =
+    "const memoizedFuncOutput = useMemo(()=> heavyFunction(), [modifiedVariable])";
+
+  const counterCode =
+    'import React, { useMemo, useState } from "react";\n' +
+    "\n" +
+    "function UseMemoExample() {\n" +
+    " const [state, setState] = useState(1);\n" +
+    "\n" +
+    "  const reRenderOnClickHandle = () => {\n" +
+    "    setState(state + 1);\n" +
+    "  };\n" +
+    "\n" +
+    "  const memoizedIndependentCounter = useMemo(() => IndependentCounter(), []);\n" +
+    "  return (\n" +
+    "    <div>\n" +
+    "       <button onClick={reRenderOnClickHandle}>Re-render</button>\n" +
+    "          independent counter (increases each time You hit re-render): <IndependentCounter></IndependentCounter>\n" +
+    "          memoized counter (useMemo prevents it from counting): {memoizedIndependentCounter}\n" +
+    "    </div>\n" +
+    "  );\n" +
+    "}\n" +
+    "\n" +
+    "export default UseMemoView;\n" +
+    "\n" +
+    "let count = 0;\n" +
+    "export function IndependentCounter() {\n" +
+    "  if (count < 100) {\n" +
+    "    const timer = setInterval(() => {\n" +
+    "      count++;\n" +
+    "      if (count > 100) clearInterval(timer);\n" +
+    "    }, 1000);\n" +
+    "  }\n" +
+    "\n" +
+    "  return <h3>{count}</h3>;\n" +
+    "}";
+
+  const [state, setState] = useState(1);
+
+  const reRenderOnClickHandle = () => {
+    setState(state + 1);
+  };
+
+  const memoizedIndependentCounter = useMemo(() => IndependentCounter(), []);
+  return (
+    <div>
+      <HooksDescription
+        basicHookCode={useMemoCode}
+        basicHookDescription={useMemoDescription}
+      ></HooksDescription>
+      <Box margin="150px"></Box>
+      <Container>
+        <Button variant="outlined" onClick={reRenderOnClickHandle}>
+          Re-render
+        </Button>
+        <Container>
+          <Typography>
+            independent counter (increases each time You hit re-render):{" "}
+          </Typography>
+          <IndependentCounter></IndependentCounter>
+          <Typography>
+            memoized counter (useMemo prevents it from counting):{" "}
+          </Typography>
+          {memoizedIndependentCounter}
+        </Container>
+        <SyntaxHighlighter style={darcula} language="javascript">
+          {counterCode}
+        </SyntaxHighlighter>
+      </Container>
+    </div>
+  );
 }
 
-export default useMemoView;
+export default UseMemoView;
+
+let count = 0;
+export function IndependentCounter() {
+  if (count < 100) {
+    const timer = setInterval(() => {
+      count++;
+      if (count > 100) clearInterval(timer);
+    }, 1000);
+  }
+  return <h3>{count}</h3>;
+}

@@ -23,6 +23,9 @@ function MenuLinks() {
         <li>
           <Link to="/hooks/customHooks">customHooks</Link>
         </li>
+        <li>
+          <Link to="/hooks/useContext">useContext</Link>
+        </li>
       </ul>
     </div>
   );

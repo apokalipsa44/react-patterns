@@ -1,7 +1,7 @@
 import React from "react";
 
-function useContexView() {
-  return <div>useContexView</div>;
+function UseContextView() {
+  return <div>useContextView</div>;
 }
 
-export default useContexView;
+export default UseContextView;

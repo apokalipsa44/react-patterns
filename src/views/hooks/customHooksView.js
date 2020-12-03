@@ -1,6 +1,6 @@
 import React from 'react'
 
-function customHooksView() {
+function CustomHooksView() {
     return (
         <div>
             customHooksView
@@ -8,4 +8,4 @@ function customHooksView() {
     )
 }
 
-export default customHooksView
+export default CustomHooksView
