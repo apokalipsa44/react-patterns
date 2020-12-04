@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Box, Container, Typography } from "@material-ui/core";
 import { useReducerCode } from "./codeSnippets/UseReducerSnippets";
-import { CallToActionSharp } from "@material-ui/icons";
+import { CallToActionSharp, ContactsOutlined } from "@material-ui/icons";
 
 const ACTIONS = {
   DELETE_TODO: "delete-todo",
@@ -17,13 +17,17 @@ function reducer(todos, action) {
   switch (action.type) {
     case ACTIONS.ADD_TODO:
       return [...todos, newTodo(action.payload.todoName, todos)];
+    case ACTIONS.DELETE_TODO:
+      return todos.filter((todo) => todo.id !== action.payload.id);
+    case ACTIONS.CLEAR_TODOS:
+      return action.payload;
     default:
       return todos;
   }
 }
 function newTodo(todoName, todos) {
   return {
-    id: todos.length,
+    id: todos.length + 1,
     name: todoName,
   };
 }
@@ -64,11 +68,24 @@ function UseReducerView() {
               type: ACTIONS.ADD_TODO,
               payload: { todoName: todoName },
             });
+            setTodoName("");
           }}
         >
           Add Todo
         </button>
-        <Todo todoList={todos}></Todo>
+        <button
+          onClick={(e) => {
+            dispatch({
+              type: ACTIONS.CLEAR_TODOS,
+              payload: [],
+            });
+          }}
+        >
+          clear all
+        </button>
+        {todos.map((todo) => {
+          return <Todo key={todo.id} todo={todo} dispatch={dispatch}></Todo>;
+        })}
       </Container>
     </div>
   );
@@ -76,19 +93,23 @@ function UseReducerView() {
 
 export default UseReducerView;
 
-function Todo({ todoList }) {
+function Todo({ todo, dispatch }) {
   return (
     <div>
-      {todoList.map((todo) => {
-        return (
-          <div>
-            <h3>
-              {todo.id + 1}: {todo.name}
-            </h3>
-            <button>delete</button>
-          </div>
-        );
-      })}
+      <h3>
+        {todo.id}: {todo.name}
+      </h3>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch({
+            type: ACTIONS.DELETE_TODO,
+            payload: { id: todo.id },
+          });
+        }}
+      >
+        delete
+      </button>
     </div>
   );
 }
