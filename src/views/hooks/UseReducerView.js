@@ -3,9 +3,14 @@ import { useReducer, useState } from "react";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Box, Container, Typography } from "@material-ui/core";
-import { useReducerCode } from "./codeSnippets/UseReducerSnippets";
-import { CallToActionSharp, ContactsOutlined } from "@material-ui/icons";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { useReducerCode, exampleCode } from "./codeSnippets/UseReducerSnippets";
 
 const ACTIONS = {
   DELETE_TODO: "delete-todo",
@@ -56,12 +61,15 @@ function UseReducerView() {
       ></HooksDescription>
       <Box margin="150px"></Box>
       <Container>
-        <input
+        <TextField
+          label="new todo"
+          placeholder="what is it You want to do?"
           type="text"
           onChange={(e) => setTodoName(e.target.value)}
           value={todoName}
         />
-        <button
+        <Button
+          variant="outlined"
           onClick={(e) => {
             e.preventDefault();
             dispatch({
@@ -72,8 +80,9 @@ function UseReducerView() {
           }}
         >
           Add Todo
-        </button>
-        <button
+        </Button>{" "}
+        <Button
+          variant="outlined"
           onClick={(e) => {
             dispatch({
               type: ACTIONS.CLEAR_TODOS,
@@ -82,10 +91,16 @@ function UseReducerView() {
           }}
         >
           clear all
-        </button>
+        </Button>
         {todos.map((todo) => {
           return <Todo key={todo.id} todo={todo} dispatch={dispatch}></Todo>;
         })}
+      </Container>
+      <Box m="20px"></Box>
+      <Container>
+        <SyntaxHighlighter style={darcula} language="jsx">
+          {exampleCode}
+        </SyntaxHighlighter>
       </Container>
     </div>
   );
@@ -95,11 +110,14 @@ export default UseReducerView;
 
 function Todo({ todo, dispatch }) {
   return (
-    <div>
-      <h3>
+    <Container>
+      <Typography display="inline">
         {todo.id}: {todo.name}
-      </h3>
-      <button
+      </Typography>
+      <Box display="inline" ml="12px"></Box>
+      <Button
+        display="inline"
+        variant="outlined"
         onClick={(e) => {
           e.preventDefault();
           dispatch({
@@ -109,7 +127,8 @@ function Todo({ todo, dispatch }) {
         }}
       >
         delete
-      </button>
-    </div>
+      </Button>
+      <Box mb="12px"></Box>
+    </Container>
   );
 }
