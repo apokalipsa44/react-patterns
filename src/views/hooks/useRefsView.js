@@ -139,7 +139,7 @@ function useRefsView() {
         </Box>
       </Container>
       <Container>
-        <SyntaxHighlighter style={darcula} language="javascript">
+        <SyntaxHighlighter style={darcula} language="jsx">
           {loginFormCode}
         </SyntaxHighlighter>
       </Container>

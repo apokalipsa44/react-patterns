@@ -129,7 +129,7 @@ function UseEffectView() {
         <Container>
           <img src={setImage()} alt="status" width="475px" height="380px"></img>
         </Container>
-        <SyntaxHighlighter style={darcula} language="javascript">
+        <SyntaxHighlighter style={darcula} language="jsx">
           {catStatusCode}
         </SyntaxHighlighter>
       </Container>

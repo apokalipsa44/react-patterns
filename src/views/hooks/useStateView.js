@@ -76,7 +76,7 @@ function useStateView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={darcula} language="javascript">
+        <SyntaxHighlighter style={darcula} language="jsx">
           {counterCode}
         </SyntaxHighlighter>
       </Container>
