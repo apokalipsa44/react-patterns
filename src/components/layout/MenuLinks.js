@@ -26,6 +26,9 @@ function MenuLinks() {
         <li>
           <Link to="/hooks/useContext">useContext</Link>
         </li>
+        <li>
+          <Link to="/hooks/useReducer">useReducer</Link>
+        </li>
       </ul>
     </div>
   );

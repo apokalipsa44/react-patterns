@@ -18,7 +18,7 @@ function UseMemoView() {
         every time that parameter gets changed.
       </Typography>
       <Typography>
-        Most common is to use it as shouldComponentUpdate alternative.
+        Most common is to use it as <b>shouldComponentUpdate</b> alternative.
       </Typography>
     </div>
   );
@@ -87,13 +87,14 @@ function UseMemoView() {
         </Button>
         <Container>
           <Typography>
-            independent counter (increases each time You hit re-render):{" "}
+            <b>independent counter</b> (increases each time You hit re-render):{" "}
           </Typography>
           <IndependentCounter></IndependentCounter>
           <Typography>
-            memoized counter (useMemo prevents it from counting):{" "}
+          <b>memoized independent counter</b> (useMemo prevents it from counting):{" "}
           </Typography>
-          {memoizedIndependentCounter}
+        {memoizedIndependentCounter}
+    
         </Container>
         <SyntaxHighlighter style={darcula} language="jsx">
           {counterCode}
