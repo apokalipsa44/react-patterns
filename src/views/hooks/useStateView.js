@@ -7,7 +7,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 
-function useStateView() {
+function UseStateView() {
   const [count, setCount] = useState(0);
 
   const counterCode =
@@ -84,4 +84,4 @@ function useStateView() {
   );
 }
 
-export default useStateView;
+export default UseStateView;

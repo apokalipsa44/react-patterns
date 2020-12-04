@@ -29,6 +29,9 @@ function MenuLinks() {
         <li>
           <Link to="/hooks/useReducer">useReducer</Link>
         </li>
+        <li>
+          <Link to="/hooks/useCallback">useCallback</Link>
+        </li>
       </ul>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import HooksDescription from "./../../components/descriptions/HooksDescription";
+import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Box, Container, Typography } from "@material-ui/core";
