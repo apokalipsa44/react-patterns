@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import HooksDescription from "./../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -12,7 +12,7 @@ function UseContextView() {
   const useContextCode = `// in parent element
 export const ParentContext = React.createContext;
 
-  <ParentContext.Provider value={importantVariableToPass}>
+  <ParentContext.Provider value={importantVariableToPass}>  // value is a must
     //some children 
   </ParentContext.Provider>
 
@@ -39,9 +39,8 @@ const context = useContext(ParentContext);
 
   const exampleCode = `import React from "react";
 import { useContext, useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
-const name = "UserName"
+const name = "UserName"  // this can also be an object
 export const NameContext = React.createContext(name);
 
 function UseContextExample() {
@@ -60,7 +59,7 @@ export default UseContextView;
 export function NotImportantChild() {
   return (
     <div>
-      <h3>This is the first child</h3>
+      <h3>I didn't get any props...</h3>
       <ImportantChild></ImportantChild>
       <h3>end of the first child</h3>
     </div>
@@ -69,10 +68,10 @@ export function NotImportantChild() {
 
 export function ImportantChild() {
   const name = useContext(NameContext);
-  console.log(name)
+
   return 
   <div>
-  <h3>Welcome to second child</h3>
+  <h3>But i did!</h3>
   <h3>Name passed from context provider: {name}</h3>
   </div>;
 }`;
@@ -104,7 +103,7 @@ export function NotImportantChild() {
   return (
     <div>
       <Box bgcolor="lightblue" width="40%" p={1}>
-        <Typography>This is the first child</Typography>
+        <Typography>I didn't get any props...</Typography>
         <ImportantChild></ImportantChild>
         <Typography>end of the first child</Typography>
       </Box>
@@ -114,10 +113,9 @@ export function NotImportantChild() {
 
 export function ImportantChild() {
   const name = useContext(NameContext);
-  console.log(name);
   return (
     <Box color="white" bgcolor="gray" width="95%" p={1}>
-      <Typography>Welcome to second child</Typography>
+      <Typography>But i did!</Typography>
       <Typography>
         Name passed from context provider: <b>{name}</b>
       </Typography>
