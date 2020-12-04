@@ -32,7 +32,7 @@ function UseMemoView() {
     " const [state, setState] = useState(1);\n" +
     "\n" +
     "  const reRenderOnClickHandle = () => {\n" +
-    "    setState(state + 1);\n" +
+    "    setState(state + 1);  // this is just to force re-rendering\n" +
     "  };\n" +
     "\n" +
     "  const memoizedIndependentCounter = useMemo(() => IndependentCounter(), []);\n" +
@@ -65,6 +65,11 @@ function UseMemoView() {
     setState(state + 1);
   };
 
+  const clearCounterOnClickHandle = () => {
+    count = 0;
+    reRenderOnClickHandle();
+  };
+
   const memoizedIndependentCounter = useMemo(() => IndependentCounter(), []);
   return (
     <div>
@@ -76,6 +81,9 @@ function UseMemoView() {
       <Container>
         <Button variant="outlined" onClick={reRenderOnClickHandle}>
           Re-render
+        </Button>{" "}
+        <Button variant="outlined" onClick={clearCounterOnClickHandle}>
+          clear counter
         </Button>
         <Container>
           <Typography>
