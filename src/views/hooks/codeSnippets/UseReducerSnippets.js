@@ -12,15 +12,11 @@ const reducer = (state, action) => {
 };
 
 const stateModifyingFunction = () => {
-  dispatch({
-    type: "MODIFY-STATE-ONE",
-    payload: { someObjectToPass: "exampleValue" },
+  dispatch({type: "MODIFY-STATE-ONE", payload: { someObjectToPass: "exampleValue" },
   });
 };
 const anotherStateModifyingFunction = () => {
-  dispatch({
-    type: "MODIFY-STATE-TWO",
-    payload: { someObjectToPass: "exampleValue" },
+  dispatch({type: "MODIFY-STATE-TWO", payload: { someObjectToPass: "exampleValue" },
   });
 };`;
 
