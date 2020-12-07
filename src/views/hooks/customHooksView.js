@@ -1,13 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import { Box, Container, Typography } from "@material-ui/core";
+import { Box, Button, Container, Typography } from "@material-ui/core";
 import HooksDescription from "../../components/descriptions/HooksDescription";
-import { customHookCode } from "./codeSnippets/CustomHookSnippets";
+import {
+  customHookCode,
+  kermitSnippet,
+} from "./codeSnippets/CustomHookSnippets";
 import kermit1 from "../../assets/img/kermit/kermit.jpg";
 import kermit2 from "../../assets/img/kermit/kermit2.jpg";
 import kermit3 from "../../assets/img/kermit/kermit3.jpg";
 import kermit4 from "../../assets/img/kermit/kermit4.jpg";
 import kermit5 from "../../assets/img/kermit/kermit5.jpg";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+const assetsDownloadLink =
+  "http://s000.tinyupload.com/?file_id=41173584674743472513";
 
 function CustomHooksView() {
   const customHookDescription = (
@@ -39,79 +47,133 @@ function CustomHooksView() {
         basicHookCode={customHookCode}
       ></HooksDescription>
       <Box margin="150px"></Box>
+
+      <Typography>
+        Each Kermit has an independent "isCollapsed" state but the "collapsing"
+        logic is shared thru custom hook "useKermit"{" "}
+      </Typography>
+      <Box display="flex" flexDirection="row" flexWrap="wrap">
+        <Box
+          width="260px"
+          height="260px"
+          m={2}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bgcolor="#dae1e6"
+            width="260px"
+            height="170px"
+            alignSelf="flex-top"
+          >
+            {isVisibleKermit1 && <img src={kermit1} alt="kermit" />}
+          </Box>
+
+          <Box alignSelf="flex-end">
+            {" "}
+            <Button variant="outlined" onClick={() => setIsVisibleKermit1()}>
+              Reveal
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          width="260px"
+          height="260px"
+          m={2}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bgcolor="#dae1e6"
+            width="260px"
+            height="170px"
+            alignSelf="flex-top"
+          >
+            {isVisibleKermit2 && <img src={kermit2} alt="kermit" />}
+          </Box>
+
+          <Box alignSelf="flex-end">
+            {" "}
+            <Button variant="outlined" onClick={() => setIsVisibleKermit2()}>
+              Reveal
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          width="260px"
+          height="260px"
+          m={2}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bgcolor="#dae1e6"
+            width="260px"
+            height="170px"
+            alignSelf="flex-top"
+          >
+            {isVisibleKermit3 && <img src={kermit3} alt="kermit" />}
+          </Box>
+
+          <Box alignSelf="flex-end">
+            {" "}
+            <Button variant="outlined" onClick={() => setIsVisibleKermit3()}>
+              Reveal
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          width="260px"
+          height="260px"
+          m={2}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bgcolor="#dae1e6"
+            width="260px"
+            height="170px"
+            alignSelf="flex-top"
+          >
+            {isVisibleKermit4 && <img src={kermit4} alt="kermit" />}
+          </Box>
+
+          <Box alignSelf="flex-end">
+            {" "}
+            <Button variant="outlined" onClick={() => setIsVisibleKermit4()}>
+              Reveal
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          width="260px"
+          height="260px"
+          m={2}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bgcolor="#dae1e6"
+            width="260px"
+            height="170px"
+            alignSelf="flex-top"
+          >
+            {isVisibleKermit5 && <img src={kermit5} alt="kermit" />}
+          </Box>
+
+          <Box alignSelf="flex-end">
+            {" "}
+            <Button variant="outlined" onClick={() => setIsVisibleKermit5()}>
+              Reveal
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+
       <Container>
-        <div
-          style={{
-            display: "inline-block",
-            margin: "12px",
-          }}
-        >
-          {isVisibleKermit1 && <img src={kermit1} alt="kermit" />}
-          <button
-            style={{ display: "block" }}
-            onClick={() => setIsVisibleKermit1()}
-          >
-            Reveal
-          </button>
-        </div>
-        <div
-          style={{
-            display: "inline-block",
-            margin: "12px",
-          }}
-        >
-          {isVisibleKermit2 && <img src={kermit2} alt="kermit" />}
-          <button
-            style={{ display: "block" }}
-            onClick={() => setIsVisibleKermit2()}
-          >
-            Reveal
-          </button>
-        </div>
-        <div
-          style={{
-            display: "inline-block",
-            margin: "12px",
-          }}
-        >
-          {isVisibleKermit3 && <img src={kermit3} alt="kermit" />}
-          <button
-            style={{ display: "block" }}
-            onClick={() => setIsVisibleKermit3()}
-          >
-            Reveal
-          </button>
-        </div>
-        <div
-          style={{
-            display: "inline-block",
-            margin: "12px",
-          }}
-        >
-          {isVisibleKermit4 && <img src={kermit4} alt="kermit" />}
-          <button
-            style={{ display: "block" }}
-            on
-            onClick={() => setIsVisibleKermit4()}
-          >
-            Reveal
-          </button>
-        </div>
-        <div
-          style={{
-            display: "inline-block",
-            margin: "12px",
-          }}
-        >
-          {isVisibleKermit5 && <img src={kermit5} alt="kermit" />}
-          <button
-            style={{ display: "block" }}
-            on
-            onClick={() => setIsVisibleKermit5()}
-          >
-            Reveal
-          </button>
-        </div>
+        <SyntaxHighlighter style={darcula} language="jsx">
+          {kermitSnippet}
+        </SyntaxHighlighter>
       </Container>
     </div>
   );
