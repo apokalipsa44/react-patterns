@@ -1,7 +1,9 @@
-export const customHookCode=`function useCustomHook(optionalVariable){
-    // some logic
-    return ourLogicOutput;
-}`
+export const customHookCode = `function useCustomHook(optionalVariable){
+    const someFunction= () => {
+      // some logic, hooks...
+    }
+    return [ourLogicOutput, someFunction];  // return is also optional
+}`;
 
 export const kermitSnippet = `import React from "react";
 import { useState } from "react";
@@ -108,7 +110,4 @@ export function useKermit() {
   };
   return [isCollapsed, setIsKermitCollapsed];
 }
-`
-
-
-
+`;
