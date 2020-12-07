@@ -11,7 +11,7 @@ import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-function useRefsView() {
+function UseRefsView() {
   const useRefsDescription = (
     <Typography>
       A way to select DOM elements generated from jsx. You have to pass to JSX
@@ -147,4 +147,4 @@ function useRefsView() {
   );
 }
 
-export default useRefsView;
+export default UseRefsView;

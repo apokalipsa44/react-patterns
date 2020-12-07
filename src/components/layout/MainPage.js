@@ -2,13 +2,13 @@ import { Box } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CustomHooksView from "../../views/hooks/CustomHooksView";
-import UseCallbackView from "../../views/hooks/useCallbackView";
+import UseCallbackView from "../../views/hooks/UseCallbackView";
 import UseContextView from "../../views/hooks/UseContextView";
-import UseEffectView from "../../views/hooks/useEffectView";
+import UseEffectView from "../../views/hooks/UseEffectView";
 import UseMemoView from "../../views/hooks/UseMemoView";
 import UseReducerView from "../../views/hooks/UseReducerView";
-import UseReduxView from "../../views/hooks/useReduxHooks";
-import UseRefsView from "../../views/hooks/useRefsView";
+import UseReduxView from "../../views/hooks/UseReduxView";
+import UseRefsView from "../../views/hooks/UseRefsView";
 import UseStateView from "../../views/hooks/UseStateView";
 
 function MainPage() {

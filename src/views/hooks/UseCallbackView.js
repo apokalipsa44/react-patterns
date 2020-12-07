@@ -29,7 +29,7 @@ function UseCallbackView() {
         <Typography>
           More about useMemo{" "}
           <Link to="/hooks/useMemo">
-            <b>here</b>
+            <b>here</b>.
           </Link>
         </Typography>
       </Container>
