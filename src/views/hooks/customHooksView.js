@@ -72,7 +72,7 @@ function CustomHooksView() {
           <Box alignSelf="flex-end">
             {" "}
             <Button variant="outlined" onClick={() => setIsVisibleKermit1()}>
-              Reveal
+              {isVisibleKermit1 ? "Hide" : "Reveal"}
             </Button>
           </Box>
         </Box>
@@ -95,7 +95,7 @@ function CustomHooksView() {
           <Box alignSelf="flex-end">
             {" "}
             <Button variant="outlined" onClick={() => setIsVisibleKermit2()}>
-              Reveal
+              {isVisibleKermit2 ? "Hide" : "Reveal"}
             </Button>
           </Box>
         </Box>
@@ -116,9 +116,8 @@ function CustomHooksView() {
           </Box>
 
           <Box alignSelf="flex-end">
-            {" "}
             <Button variant="outlined" onClick={() => setIsVisibleKermit3()}>
-              Reveal
+              {isVisibleKermit3 ? "Hide" : "Reveal"}
             </Button>
           </Box>
         </Box>
@@ -139,9 +138,8 @@ function CustomHooksView() {
           </Box>
 
           <Box alignSelf="flex-end">
-            {" "}
             <Button variant="outlined" onClick={() => setIsVisibleKermit4()}>
-              Reveal
+              {isVisibleKermit4 ? "Hide" : "Reveal"}
             </Button>
           </Box>
         </Box>
@@ -162,9 +160,8 @@ function CustomHooksView() {
           </Box>
 
           <Box alignSelf="flex-end">
-            {" "}
             <Button variant="outlined" onClick={() => setIsVisibleKermit5()}>
-              Reveal
+              {isVisibleKermit5 ? "Hide" : "Reveal"}
             </Button>
           </Box>
         </Box>
