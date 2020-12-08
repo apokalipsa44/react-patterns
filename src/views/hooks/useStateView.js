@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Box, Container } from "@material-ui/core";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 
 function UseStateView() {
@@ -79,7 +79,7 @@ function UseStateView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {counterCode}
         </SyntaxHighlighter>
       </Container>

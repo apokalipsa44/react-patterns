@@ -1,4 +1,3 @@
-import { Box } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CustomHooksView from "../../views/hooks/CustomHooksView";
@@ -10,6 +9,9 @@ import UseReducerView from "../../views/hooks/UseReducerView";
 import UseReduxView from "../../views/hooks/UseReduxView";
 import UseRefsView from "../../views/hooks/UseRefsView";
 import UseStateView from "../../views/hooks/UseStateView";
+import ContextProviderView from '../../views/stateManagement/ContextProviderView'
+import SetStateView from '../../views/stateManagement/stateManagement'
+import ReduxView from '../../views/stateManagement/stateManagement'
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -51,6 +53,15 @@ function MainPage() {
         </Route>
         <Route path="/hooks/useCallback" exact>
           <UseCallbackView></UseCallbackView>
+        </Route>
+        <Route path="/state/contextProvider" exact>
+          <ContextProviderView/>
+        </Route>
+        <Route path="/state/redux" exact>
+          <ReduxView/>
+        </Route>
+        <Route path="/state/setState" exact>
+         <SetStateView/>
         </Route>
       </Switch>
     </div>

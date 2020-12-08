@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography } from "@material-ui/core";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function HooksDescription(props) {
   const { basicHookCode, basicHookDescription } = props;
@@ -10,7 +10,7 @@ function HooksDescription(props) {
     <>
       <Typography>{basicHookDescription}</Typography>
       <Box>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {basicHookCode}
         </SyntaxHighlighter>
       </Box>

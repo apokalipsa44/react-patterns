@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Box, Button, Container, Typography } from "@material-ui/core";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function UseMemoView() {
   const useMemoDescription = (
@@ -99,7 +99,7 @@ function UseMemoView() {
           </Typography>
           {memoizedIndependentCounter}
         </Container>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {counterCode}
         </SyntaxHighlighter>
       </Container>

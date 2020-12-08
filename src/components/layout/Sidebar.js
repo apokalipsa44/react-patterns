@@ -9,9 +9,10 @@ import {
   AccordionDetails,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import backgroundImage from "../../assets/img/side-background.png";
+import { makeStyles } from "@material-ui/core/styles";
 import MenuLinks from "./MenuLinks";
+import { hooksLinks } from "./links/hooksLinks";
+import { stateManagementLinks  } from "./links/stateManagementLinks";
 
 const drawerWidth = 240;
 
@@ -39,7 +40,7 @@ function Sidebar() {
           <Typography>Hooks</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <MenuLinks />
+          <MenuLinks linkList={hooksLinks} />
         </AccordionDetails>
       </Accordion>
 
@@ -50,9 +51,11 @@ function Sidebar() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>State managment</Typography>
+          <Typography>State management</Typography>
         </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
+        <AccordionDetails>
+          <MenuLinks linkList={stateManagementLinks} />
+        </AccordionDetails>
       </Accordion>
     </MuiDrawer>
   );

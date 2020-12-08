@@ -22,7 +22,7 @@ export const hooksLinks = [
   },
   {
     text: "useReducer",
-    url: "hooks/useReducer",
+    url: "/hooks/useReducer",
   },
   { text: "custom hooks", url: "/hooks/customHooks" },
 ];

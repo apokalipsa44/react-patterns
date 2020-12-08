@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function UseRefsView() {
   const useRefsDescription = (
@@ -142,7 +142,7 @@ function UseRefsView() {
         </Box>
       </Container>
       <Container>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {loginFormCode}
         </SyntaxHighlighter>
       </Container>

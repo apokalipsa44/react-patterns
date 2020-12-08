@@ -12,7 +12,8 @@ import kermit3 from "../../assets/img/kermit/kermit3.jpg";
 import kermit4 from "../../assets/img/kermit/kermit4.jpg";
 import kermit5 from "../../assets/img/kermit/kermit5.jpg";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {  atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+ 
 
 const assetsDownloadLink =
   "http://s000.tinyupload.com/?file_id=41173584674743472513";
@@ -79,7 +80,7 @@ function CustomHooksView() {
               height="170px"
               alignSelf="flex-top"
             >
-              {isVisibleKermit1 && <img src={kermit1} alt="kermit" />}
+              {isVisibleKermit1 && <img src={kermit1} alt="kermit1" />}
             </Box>
 
             <Box alignSelf="flex-end">
@@ -102,7 +103,7 @@ function CustomHooksView() {
               height="170px"
               alignSelf="flex-top"
             >
-              {isVisibleKermit2 && <img src={kermit2} alt="kermit" />}
+              {isVisibleKermit2 && <img src={kermit2} alt="kermit2" />}
             </Box>
 
             <Box alignSelf="flex-end">
@@ -125,7 +126,7 @@ function CustomHooksView() {
               height="170px"
               alignSelf="flex-top"
             >
-              {isVisibleKermit3 && <img src={kermit3} alt="kermit" />}
+              {isVisibleKermit3 && <img src={kermit3} alt="kermit3" />}
             </Box>
 
             <Box alignSelf="flex-end">
@@ -147,7 +148,7 @@ function CustomHooksView() {
               height="170px"
               alignSelf="flex-top"
             >
-              {isVisibleKermit4 && <img src={kermit4} alt="kermit" />}
+              {isVisibleKermit4 && <img src={kermit4} alt="kermit4" />}
             </Box>
 
             <Box alignSelf="flex-end">
@@ -169,7 +170,7 @@ function CustomHooksView() {
               height="170px"
               alignSelf="flex-top"
             >
-              {isVisibleKermit5 && <img src={kermit5} alt="kermit" />}
+              {isVisibleKermit5 && <img src={kermit5} alt="kermit5" />}
             </Box>
 
             <Box alignSelf="flex-end">
@@ -182,7 +183,7 @@ function CustomHooksView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {kermitSnippet}
         </SyntaxHighlighter>
       </Container>

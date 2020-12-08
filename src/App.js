@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import { CssBaseline, FormControlLabel } from "@material-ui/core";
-import { positions } from "@material-ui/system";
 
 const useStyles = makeStyles({
   container: {

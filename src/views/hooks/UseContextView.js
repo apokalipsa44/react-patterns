@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Box, Container, Typography } from "@material-ui/core";
 
 const name = "UserName";
@@ -92,7 +92,7 @@ export function ImportantChild() {
         </NameContext.Provider>
       </Container>
       <Container>
-        <SyntaxHighlighter language="jsx" style={darcula}>
+        <SyntaxHighlighter language="jsx" style={atomDark}>
           {exampleCode}
         </SyntaxHighlighter>
       </Container>
@@ -105,7 +105,7 @@ export default UseContextView;
 export function NotImportantChild() {
   return (
     <div>
-      <Box bgcolor="lightblue" width="40%" p={1}>
+      <Box bgcolor="#d9b041" width="40%" p={1}>
         <Typography>I didn't get any props...</Typography>
         <ImportantChild></ImportantChild>
         <Typography>end of the first child</Typography>

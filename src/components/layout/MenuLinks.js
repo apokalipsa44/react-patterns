@@ -1,16 +1,15 @@
 import React from "react";
 import { ListItem, List, ListItemText } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
-import { hooksLinks } from "../links/hooksLinks";
 
 function MenuLinks(props) {
-  const { history } = props;
+  const { history, linkList } = props;
   // const hooksLinks = console.log(props);
 
   const getMenuItems = (items) => {
     return (
       <List>
-        {items.map((item) => {
+        {linkList.map((item) => {
           const { text, url } = item;
           return (
             <ListItem button key={text} onClick={() => history.push(url)}>
@@ -21,7 +20,7 @@ function MenuLinks(props) {
       </List>
     );
   };
-  return getMenuItems(hooksLinks);
+  return getMenuItems(linkList);
 }
 
 export default withRouter(MenuLinks);

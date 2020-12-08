@@ -2,7 +2,7 @@ import React from "react";
 import { useReducer, useState } from "react";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   Box,
   Button,
@@ -101,7 +101,7 @@ function UseReducerView() {
       </Container>
       <Box m="20px"></Box>
       <Container>
-        <SyntaxHighlighter style={darcula} language="jsx">
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {exampleCode}
         </SyntaxHighlighter>
       </Container>
