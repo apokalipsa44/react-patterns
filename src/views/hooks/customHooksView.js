@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Box, Button, Container, Typography } from "@material-ui/core";
+import { Box, Button, Container, Link, Typography } from "@material-ui/core";
 import HooksDescription from "../../components/descriptions/HooksDescription";
 import {
   customHookCode,
@@ -55,9 +55,9 @@ function CustomHooksView() {
         </Typography>
         <Typography>
           For full kermit experience download assets{" "}
-          <a href={assetsDownloadLink} rel="noreferrer" target="_blank">
+          <Link href={assetsDownloadLink} rel="noreferrer" target="_blank">
             <b>here</b>
-          </a>
+          </Link>
           .
         </Typography>
       </Container>
@@ -193,7 +193,6 @@ export function useKermit() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const setIsKermitCollapsed = () => {
     setIsCollapsed(!isCollapsed);
-    console.log(isCollapsed);
   };
   return [isCollapsed, setIsKermitCollapsed];
 }

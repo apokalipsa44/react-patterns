@@ -1,40 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ListItem, List, ListItemText } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 
-function MenuLinks() {
-  return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/hooks/useState">useState</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useEffect">useEffect</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useRedux">useRedux</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useRefs">useRefs</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useMemo">useMemo</Link>
-        </li>
-        <li>
-          <Link to="/hooks/customHooks">customHooks</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useContext">useContext</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useReducer">useReducer</Link>
-        </li>
-        <li>
-          <Link to="/hooks/useCallback">useCallback</Link>
-        </li>
-      </ul>
-    </div>
-  );
+function MenuLinks(props) {
+  const { history } = props;
+  console.log(props);
+  const hooksLinks = [
+    { text: "useState", url: "/hooks/useState" },
+    {
+      text: "useEffect",
+      url: "/hooks/useEffect",
+    },
+    {
+      text: "useRefs",
+      url: "/hooks/useRefs",
+    },
+    {
+      text: "useMemo",
+      url: "/hooks/useMemo",
+    },
+    {
+      text: "useCallback",
+      url: "/hooks/useCallback",
+    },
+    {
+      text: "useContext",
+      url: "/hooks/useContext",
+    },
+    {
+      text: "useReducer",
+      url: "hooks/useReducer",
+    },
+    { text: "custom hooks", url: "/hooks/customHooks" },
+  ];
+
+  const getMenuItems = (items) => {
+    return (
+      <List>
+        {items.map((item) => {
+          const { text, url } = item;
+          return (
+            <ListItem button key={text} onClick={()=>history.push(url)}>
+              <ListItemText primary={text} />
+            </ListItem>
+          );
+        })}
+      </List>
+    );
+  };
+  return(getMenuItems(hooksLinks)) 
 }
 
-export default MenuLinks;
+export default withRouter(MenuLinks);
