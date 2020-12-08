@@ -6,7 +6,7 @@ import {
   Typography,
   Accordion,
   AccordionSummary,
-  AccordionDetails, 
+  AccordionDetails,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -19,13 +19,16 @@ const useStyles = makeStyles({
   drawer: {
     width: drawerWidth,
   },
+  topSpacer: {
+    height: "80px",
+  },
 });
 
 function Sidebar() {
   const classes = useStyles();
   return (
     <MuiDrawer variant="permanent" className={classes.drawer}>
-        <div className={classes.toolbar} />
+      <div className={classes.topSpacer} />
       <Divider />
       <Accordion>
         <AccordionSummary
@@ -33,12 +36,10 @@ function Sidebar() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography >Hooks</Typography>
+          <Typography>Hooks</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         
-            <MenuLinks/>
-          
+          <MenuLinks />
         </AccordionDetails>
       </Accordion>
 
@@ -49,11 +50,9 @@ function Sidebar() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography >HOC's</Typography>
+          <Typography>State managment</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          
-        </AccordionDetails>
+        <AccordionDetails></AccordionDetails>
       </Accordion>
     </MuiDrawer>
   );

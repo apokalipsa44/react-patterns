@@ -11,9 +11,19 @@ import UseReduxView from "../../views/hooks/UseReduxView";
 import UseRefsView from "../../views/hooks/UseRefsView";
 import UseStateView from "../../views/hooks/UseStateView";
 
+import { makeStyles } from "@material-ui/core/styles";
+
+
+const useStyles = makeStyles({
+  mainPage: {
+    marginTop: "120px",
+  },
+});
+
 function MainPage() {
+  const classes=useStyles()
   return (
-    <Box marginLeft="240px" marginTop="120px">
+    <div className={classes.mainPage}>
       <Switch>
         <Route path="/hooks/useState" exact>
           <UseStateView></UseStateView>
@@ -43,7 +53,7 @@ function MainPage() {
           <UseCallbackView></UseCallbackView>
         </Route>
       </Switch>
-    </Box>
+    </div>
   );
 }
 
