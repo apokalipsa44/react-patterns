@@ -15,25 +15,24 @@ function UseEffectView() {
     "  }, [modifiedVariable]);";
 
   const useEffectDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component="span">
         It's basicity life cycle method for function components (all in one).
         Second array parameter adds magic to this. There a tree scenarios:
       </Typography>
-      <Typography>
+      <Typography component="span">
         1. No array passed - will run each time component gets re-rendered
       </Typography>
-      <Typography>
+      <Typography component="span">
         2. Passed empty array - act's like componentDidMount - runs only once
       </Typography>
-      <Typography>
+      <Typography component="span">
         3. Passed array argument with variables - will run only when passed
         variable gets changed
       </Typography>
-    </div>
+    </>
   );
 
- 
   const catStatusCode =
     'import React from "react";\n' +
     'import { useState, useEffect } from "react";\n' +
@@ -68,7 +67,6 @@ function UseEffectView() {
 
   useEffect(() => {
     setImage();
-   
   }, [responseStatus]);
 
   const setImage = () => {
@@ -76,11 +74,13 @@ function UseEffectView() {
   };
 
   return (
-    <div>
-      <HooksDescription
-        basicHookCode={useEffectCode}
-        basicHookDescription={useEffectDescription}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookCode={useEffectCode}
+          basicHookDescription={useEffectDescription}
+        ></HooksDescription>
+      </Container>
 
       <Box margin="150px"></Box>
       <Container>
@@ -133,7 +133,7 @@ function UseEffectView() {
           {catStatusCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { CssBaseline, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 function MainAppBar() {
   return (

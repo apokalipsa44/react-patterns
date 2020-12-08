@@ -13,7 +13,7 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function UseRefsView() {
   const useRefsDescription = (
-    <Typography>
+    <Typography component="span">
       A way to select DOM elements generated from jsx. You have to pass to JSX
       element a ref property as a variable object defined by useRef hook
       function.
@@ -99,11 +99,14 @@ function UseRefsView() {
     alert(`${username} is logged!`);
   };
   return (
-    <div>
-      <HooksDescription
-        basicHookCode={useRefsCode}
-        basicHookDescription={useRefsDescription}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookCode={useRefsCode}
+          basicHookDescription={useRefsDescription}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
       <Container>
         <Box ml="10px">
@@ -143,7 +146,7 @@ function UseRefsView() {
           {loginFormCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

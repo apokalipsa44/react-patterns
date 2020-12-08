@@ -32,7 +32,7 @@ function UseStateView() {
     "// setState() is executed to create a new state value";
 
   const useStateDescription = (
-    <Typography>
+    <Typography component="span">
       Allows to manage state in function component. "Initial state can be set as
       useState parameter. Every time function setState "is executed new state is
       created.
@@ -40,11 +40,14 @@ function UseStateView() {
   );
 
   return (
-    <div>
-      <HooksDescription
-        basicHookCode={useStateCode}
-        basicHookDescription={useStateDescription}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookCode={useStateCode}
+          basicHookDescription={useStateDescription}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
       <Container>
         <Button
@@ -80,7 +83,7 @@ function UseStateView() {
           {counterCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

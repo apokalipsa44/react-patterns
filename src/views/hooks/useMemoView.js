@@ -6,21 +6,21 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function UseMemoView() {
   const useMemoDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component="span">
         Allows us to memoize the function. If a function returns same output
         each time, there is no point to run it every time component gets
         re-rendered. This hook can't be used when component receives props or
         modifies the state.
       </Typography>
-      <Typography>
+      <Typography component="span">
         When second array parameter is provided, memoized function is executed
         every time that parameter gets changed.
       </Typography>
-      <Typography>
+      <Typography component="span">
         Most common is to use it as <b>shouldComponentUpdate</b> alternative.
       </Typography>
-    </div>
+    </>
   );
   const useMemoCode =
     "const memoizedFuncOutput = useMemo(()=> heavyFunction(), [modifiedVariable])";
@@ -72,11 +72,14 @@ function UseMemoView() {
 
   const memoizedIndependentCounter = useMemo(() => IndependentCounter(), []);
   return (
-    <div>
-      <HooksDescription
-        basicHookCode={useMemoCode}
-        basicHookDescription={useMemoDescription}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookCode={useMemoCode}
+          basicHookDescription={useMemoDescription}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
       <Container>
         <Button variant="outlined" onClick={reRenderOnClickHandle}>
@@ -91,16 +94,16 @@ function UseMemoView() {
           </Typography>
           <IndependentCounter></IndependentCounter>
           <Typography>
-          <b>memoized independent counter</b> (useMemo prevents it from counting):{" "}
+            <b>memoized independent counter</b> (useMemo prevents it from
+            counting):{" "}
           </Typography>
-        {memoizedIndependentCounter}
-    
+          {memoizedIndependentCounter}
         </Container>
         <SyntaxHighlighter style={darcula} language="jsx">
           {counterCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

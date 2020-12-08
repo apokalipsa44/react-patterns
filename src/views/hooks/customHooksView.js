@@ -19,19 +19,19 @@ const assetsDownloadLink =
 
 function CustomHooksView() {
   const customHookDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component={'span'} >
         Custom hook is a way to extract w a logic from other function components
         into a separate function. To hook become real react hook i must have
         name started with use keyword. This ensures that react performs it's
         hooks checks.
       </Typography>
-      <Typography>
+      <Typography component={'span'} >
         So.. a custom hook is basically a function with name that's start's with
         use, and typically uses some normal hooks like use state or use effect
         to share it's logic between different components.
       </Typography>
-    </div>
+    </>
   );
 
   const [isVisibleKermit1, setIsVisibleKermit1] = useKermit();
@@ -41,11 +41,14 @@ function CustomHooksView() {
   const [isVisibleKermit5, setIsVisibleKermit5] = useKermit();
 
   return (
-    <div>
-      <HooksDescription
-        basicHookDescription={customHookDescription}
-        basicHookCode={customHookCode}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookDescription={customHookDescription}
+          basicHookCode={customHookCode}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
 
       <Container>
@@ -183,7 +186,7 @@ function CustomHooksView() {
           {kermitSnippet}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

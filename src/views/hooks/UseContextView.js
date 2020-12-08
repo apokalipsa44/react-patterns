@@ -23,18 +23,18 @@ const context = useContext(ParentContext);
 // feel free to use context object in Your function component`;
 
   const useContextDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component="span">
         useContext returns context object of a parent (SomeContext.Provider).
         This enables to use this object in nested child component, without need
         to passing down the props.
       </Typography>
-      <Typography>
+      <Typography component="span">
         Whenever parent gets updated child entire subtree gets re-renderd - even
         if <b>useMemo</b> or <b>shoudCopmponentUpdate()</b> were used along the
         way.
       </Typography>
-    </div>
+    </>
   );
 
   const exampleCode = `import React from "react";
@@ -77,11 +77,14 @@ export function ImportantChild() {
 }`;
 
   return (
-    <div>
-      <HooksDescription
-        basicHookDescription={useContextDescription}
-        basicHookCode={useContextCode}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookDescription={useContextDescription}
+          basicHookCode={useContextCode}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
       <Container>
         <NameContext.Provider value={name}>
@@ -93,7 +96,7 @@ export function ImportantChild() {
           {exampleCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 

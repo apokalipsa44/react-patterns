@@ -7,14 +7,14 @@ function HooksDescription(props) {
   const { basicHookCode, basicHookDescription } = props;
 
   return (
-    <Container>
+    <>
       <Typography>{basicHookDescription}</Typography>
       <Box>
         <SyntaxHighlighter style={darcula} language="jsx">
           {basicHookCode}
         </SyntaxHighlighter>
       </Box>
-    </Container>
+    </>
   );
 }
 

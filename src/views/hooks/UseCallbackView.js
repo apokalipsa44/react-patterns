@@ -6,24 +6,27 @@ import { Link } from "react-router-dom";
 
 function UseCallbackView() {
   const useCallbackDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component={"span"}>
         Almost same thing as <b>useMemo</b> hook, one difference is that
         useCallback returns a function, so You can pass arguments to it.
       </Typography>
-      <Typography>
+      <Typography component={"span"}>
         When second array parameter is provided, memoized function is executed
         every time that parameter gets changed.
       </Typography>
-    </div>
+    </>
   );
 
   return (
-    <div>
-      <HooksDescription
-        basicHookDescription={useCallbackDescription}
-        basicHookCode={useCallbackCode}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookDescription={useCallbackDescription}
+          basicHookCode={useCallbackCode}
+        ></HooksDescription>
+      </Container>
+
       <Container>
         <Box m="150px"></Box>
         <Typography>
@@ -33,7 +36,7 @@ function UseCallbackView() {
           </Link>
         </Typography>
       </Container>
-    </div>
+    </>
   );
 }
 

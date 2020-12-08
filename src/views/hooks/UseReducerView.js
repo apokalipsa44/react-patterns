@@ -39,26 +39,29 @@ function newTodo(todoName, todos) {
 
 function UseReducerView() {
   const useReducerDescription = (
-    <div>
-      <Typography>
+    <>
+      <Typography component='span'>
         State management hook similar to <b>reducer</b> from <b>Redux</b>{" "}
         library. You initialize Your state just like in useState hook, but
         instead of <b>setState</b> function there is a <b>dispatch</b> function
         witch provides all state modifying scenarios to Your <b>reducer</b>{" "}
         function (witch in turn does all the work){" "}
       </Typography>
-    </div>
+    </>
   );
 
   const [todos, dispatch] = useReducer(reducer, []);
   const [todoName, setTodoName] = useState("");
 
   return (
-    <div>
-      <HooksDescription
-        basicHookCode={useReducerCode}
-        basicHookDescription={useReducerDescription}
-      ></HooksDescription>
+    <>
+      <Container>
+        <HooksDescription
+          basicHookCode={useReducerCode}
+          basicHookDescription={useReducerDescription}
+        ></HooksDescription>
+      </Container>
+
       <Box margin="150px"></Box>
       <Container>
         <TextField
@@ -102,7 +105,7 @@ function UseReducerView() {
           {exampleCode}
         </SyntaxHighlighter>
       </Container>
-    </div>
+    </>
   );
 }
 
