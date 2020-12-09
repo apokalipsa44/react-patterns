@@ -10,8 +10,8 @@ import UseReduxView from "../../views/hooks/UseReduxView";
 import UseRefsView from "../../views/hooks/UseRefsView";
 import UseStateView from "../../views/hooks/UseStateView";
 import ContextProviderView from '../../views/stateManagement/ContextProviderView'
-import SetStateView from '../../views/stateManagement/stateManagement'
-import ReduxView from '../../views/stateManagement/stateManagement'
+import SetStateView from '../../views/stateManagement/SetStateView'
+import ReduxView from '../../views/stateManagement/ReduxView'
 
 import { makeStyles } from "@material-ui/core/styles";
 
