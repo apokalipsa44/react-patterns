@@ -12,6 +12,7 @@ import UseStateView from "../../views/hooks/UseStateView";
 import ContextProviderView from '../../views/stateManagement/ContextProviderView'
 import SetStateView from '../../views/stateManagement/SetStateView'
 import ReduxView from '../../views/stateManagement/ReduxView'
+import  Dashboard  from "../../views/Dashboard";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -62,6 +63,8 @@ function MainPage() {
         </Route>
         <Route path="/state/setState" exact>
          <SetStateView/>
+        </Route><Route path="/" exact>
+         <Dashboard/>
         </Route>
       </Switch>
     </div>

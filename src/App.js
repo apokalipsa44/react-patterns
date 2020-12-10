@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     zIndex: 1280,
     margin: "12px",
     color: "inherit",
-    position: "absolute",
+    position: "fixed",
     right: "16px",
   },
 });
@@ -57,3 +57,5 @@ function App() {
 }
 
 export default App;
+
+
