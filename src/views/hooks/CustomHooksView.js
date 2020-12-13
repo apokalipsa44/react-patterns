@@ -183,7 +183,7 @@ function CustomHooksView() {
       </Container>
 
       <Container>
-        <SyntaxHighlighter style={atomDark} language="jsx">
+        <SyntaxHighlighter wrapLines={true} style={atomDark} language="jsx">
           {kermitSnippet}
         </SyntaxHighlighter>
       </Container>

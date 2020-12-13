@@ -5,7 +5,7 @@ import MainPage from "./components/layout/MainPage";
 import { makeStyles } from "@material-ui/core/styles";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-import { CssBaseline, FormControlLabel } from "@material-ui/core";
+import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
   container: {
@@ -37,7 +37,18 @@ function App() {
     <div className={classes.container}>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <MainAppBar />
+        <Grid container>
+          <Grid item xs={12}>
+            <MainAppBar />
+          </Grid>
+          <Grid item xs={3}>
+            <Sidebar />
+          </Grid>
+          <Grid item xs={9}>
+            <MainPage />
+          </Grid>
+        </Grid>
+
         <FormControlLabel
           className={classes.darkModeSwitch}
           label="Dark mode"
@@ -49,13 +60,9 @@ function App() {
             />
           }
         ></FormControlLabel>
-        <Sidebar />
-        <MainPage />
       </ThemeProvider>
     </div>
   );
 }
 
 export default App;
-
-
