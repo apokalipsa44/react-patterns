@@ -8,8 +8,8 @@ import Switch from "@material-ui/core/Switch";
 import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
-  container: {
-    display: "flex",
+  appBar: {
+    height: "120px",
   },
   darkModeSwitch: {
     zIndex: 1280,
@@ -34,17 +34,30 @@ function App() {
 
   const classes = useStyles();
   return (
-    <div className={classes.container}>
+    <div>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Grid container>
           <Grid item xs={12}>
-            <MainAppBar />
+            <div className={classes.appBar}>
+              <FormControlLabel
+                className={classes.darkModeSwitch}
+                label={darkState ? "Toggle light mode" : "Toggle dark mode"}
+                control={
+                  <Switch
+                    color="secondary[200]"
+                    checked={darkState}
+                    onChange={handleThemeChange}
+                  />
+                }
+              ></FormControlLabel>
+              <MainAppBar />
+            </div>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item sm={3} xs={12}>
             <Sidebar />
           </Grid>
-          <Grid item xs={9}>
+          <Grid item sm={9} xs={12}>
             <MainPage />
           </Grid>
         </Grid>

@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 function MainPage() {
   const classes=useStyles()
   return (
-    <div className={classes.mainPage}>
+    <div >
       <Switch>
         <Route path="/hooks/useState" exact>
           <UseStateView></UseStateView>

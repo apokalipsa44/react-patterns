@@ -14,12 +14,9 @@ import MenuLinks from "./MenuLinks";
 import { hooksLinks } from "./links/hooksLinks";
 import { stateManagementLinks  } from "./links/stateManagementLinks";
 
-const drawerWidth = 240;
 
 const useStyles = makeStyles({
-  drawer: {
-    width: drawerWidth,
-  },
+ 
   topSpacer: {
     height: "80px",
   },
@@ -28,9 +25,8 @@ const useStyles = makeStyles({
 function Sidebar() {
   const classes = useStyles();
   return (
-    <MuiDrawer variant="permanent" className={classes.drawer}>
-      <div className={classes.topSpacer} />
-      <Divider />
+    <div >
+      
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -57,7 +53,7 @@ function Sidebar() {
           <MenuLinks linkList={stateManagementLinks} />
         </AccordionDetails>
       </Accordion>
-    </MuiDrawer>
+    </div>
   );
 }
 
