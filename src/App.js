@@ -7,6 +7,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import ReactGA from "react-ga";
 
 const useStyles = makeStyles({
   appBar: {
@@ -22,6 +23,8 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  ReactGA.initialize("G-6QBXM50MX6");
+  ReactGA.pageview("/");
   const [darkState, setDarkState] = useState(true);
   const palletType = darkState ? "dark" : "light";
   const darkTheme = createMuiTheme({
@@ -32,11 +35,6 @@ function App() {
   const handleThemeChange = () => {
     setDarkState(!darkState);
   };
-
-  // function simpleMediaQuery() {
-
-  //   return useMediaQuery(darkTheme.breakpoints.up('sm'));
-  // }
 
   const classes = useStyles();
 
