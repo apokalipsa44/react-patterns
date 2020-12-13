@@ -61,18 +61,6 @@ function App() {
             <MainPage />
           </Grid>
         </Grid>
-
-        <FormControlLabel
-          className={classes.darkModeSwitch}
-          label="Dark mode"
-          control={
-            <Switch
-              color="secondary[200]"
-              checked={darkState}
-              onChange={handleThemeChange}
-            />
-          }
-        ></FormControlLabel>
       </ThemeProvider>
     </div>
   );
