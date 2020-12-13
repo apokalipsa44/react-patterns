@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles({
   appBar: {
@@ -32,7 +33,20 @@ function App() {
     setDarkState(!darkState);
   };
 
+  // function simpleMediaQuery() {
+
+  //   return useMediaQuery(darkTheme.breakpoints.up('sm'));
+  // }
+
   const classes = useStyles();
+
+  const isScreenSm = useMediaQuery(darkTheme.breakpoints.up("sm"));
+
+  const darkSwitchLabelToggler = () => {
+    if (!isScreenSm) return "";
+    return darkState ? "Toggle light mode" : "Toggle dark mode";
+  };
+
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
@@ -42,10 +56,10 @@ function App() {
             <div className={classes.appBar}>
               <FormControlLabel
                 className={classes.darkModeSwitch}
-                label={darkState ? "Toggle light mode" : "Toggle dark mode"}
+                label={darkSwitchLabelToggler()}
                 control={
                   <Switch
-                    color="secondary[200]"
+                    color="secondary"
                     checked={darkState}
                     onChange={handleThemeChange}
                   />
@@ -54,10 +68,10 @@ function App() {
               <MainAppBar />
             </div>
           </Grid>
-          <Grid item sm={3} xs={12}>
+          <Grid item sm={2} xs={12}>
             <Sidebar />
           </Grid>
-          <Grid item sm={9} xs={12}>
+          <Grid item sm={10} xs={12}>
             <MainPage />
           </Grid>
         </Grid>
