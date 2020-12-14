@@ -14,6 +14,8 @@ const useStyles = makeStyles({
     height: "120px",
   },
   darkModeSwitch: {
+    border: '3px solid rgba(0,0,0,0.15);',
+    borderRadius:'15px',
     zIndex: 1280,
     margin: "12px",
     color: "inherit",
@@ -56,17 +58,18 @@ function App() {
         <Grid container>
           <Grid item xs={12}>
             <div className={classes.appBar}>
-              <FormControlLabel
-                className={classes.darkModeSwitch}
-                label={darkSwitchLabelToggler()}
-                control={
-                  <Switch
-                    color="secondary"
-                    checked={darkState}
-                    onChange={handleThemeChange}
-                  />
-                }
-              ></FormControlLabel>
+              <div className={classes.darkModeSwitch}>
+                <FormControlLabel
+                  label={darkSwitchLabelToggler()}
+                  control={
+                    <Switch
+                      color="secondary"
+                      checked={darkState}
+                      onChange={handleThemeChange}
+                    />
+                  }
+                ></FormControlLabel>
+              </div>
               <MainAppBar />
             </div>
           </Grid>
