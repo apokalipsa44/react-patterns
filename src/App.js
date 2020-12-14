@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import MainAppBar from "./components/layout/MainAppBar";
 import MainPage from "./components/layout/MainPage";
 import { makeStyles } from "@material-ui/core/styles";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
+import {
+  CssBaseline,
+  FormControlLabel,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from '@material-ui/core/styles';
-// import ReactGA from "react-ga";
 
 const useStyles = makeStyles({
   appBar: {
     height: "120px",
   },
   darkModeSwitch: {
-    border: "3px solid rgba(0,0,0,0.18);",
-    borderRadius: "15px",
     zIndex: 1280,
     margin: "4px",
     position: "fixed",
     right: "1px",
-    color: "#f0f6ff",
+    color: "#060d2e",
+    fontSize: "6px",
   },
   darkModeSwitchSm: {
     zIndex: 1280,
@@ -29,15 +31,13 @@ const useStyles = makeStyles({
     position: "fixed",
     margin: "0",
   },
+  darkModeSwitchLabel: {
+    color: "#060d2e",
+    fontSize: "16px",
+  },
 });
 
 function App() {
-  // useEffect(() => {
-  // ReactGA.initialize("G-JQVL1STPCF");
-  // ReactGA.pageview('/')
-  // ReactGA.pageview(window.location.pathname + window.location.search);
-  // }, []);
-
   const [darkState, setDarkState] = useState(true);
   const palletType = darkState ? "dark" : "light";
   const darkTheme = createMuiTheme({
@@ -55,7 +55,15 @@ function App() {
 
   const darkSwitchLabelToggler = () => {
     if (!isScreenSm) return "";
-    return darkState ? "Toggle light mode" : "Toggle dark mode";
+    return darkState ? (
+      <Typography className={classes.darkModeSwitchLabel}>
+        Toggle light mode
+      </Typography>
+    ) : (
+      <Typography className={classes.darkModeSwitchLabel}>
+        Toggle dark mode
+      </Typography>
+    );
   };
 
   return (
@@ -76,6 +84,7 @@ function App() {
                   label={darkSwitchLabelToggler()}
                   control={
                     <Switch
+                      size="small"
                       color="secondary"
                       checked={darkState}
                       onChange={handleThemeChange}
