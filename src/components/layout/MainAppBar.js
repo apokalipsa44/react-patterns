@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     display: "flex",
     zIndex: 1250,
     backgroundImage: "url(" + background + ")",
-    height: "8%",
+    height: "90px",
     position: "fixed",
   },
   appBarText: {

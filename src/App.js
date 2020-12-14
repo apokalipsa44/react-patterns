@@ -9,9 +9,11 @@ import {
   CssBaseline,
   FormControlLabel,
   Grid,
+  IconButton,
   Typography,
 } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles({
   appBar: {
@@ -19,7 +21,7 @@ const useStyles = makeStyles({
   },
   darkModeSwitch: {
     zIndex: 1280,
-    margin: "4px",
+    margin: "12px",
     position: "fixed",
     right: "1px",
     color: "#060d2e",
@@ -29,11 +31,12 @@ const useStyles = makeStyles({
     zIndex: 1280,
     right: "1px",
     position: "fixed",
-    margin: "0",
+    margin: "8px",
   },
   darkModeSwitchLabel: {
-    color: "#060d2e",
+    color: "#49474a",
     fontSize: "16px",
+    fontWeight: "bold",
   },
 });
 
@@ -54,16 +57,31 @@ function App() {
   const isScreenSm = useMediaQuery(darkTheme.breakpoints.up("sm"));
 
   const darkSwitchLabelToggler = () => {
-    if (!isScreenSm) return "";
-    return darkState ? (
-      <Typography className={classes.darkModeSwitchLabel}>
-        Toggle light mode
-      </Typography>
-    ) : (
-      <Typography className={classes.darkModeSwitchLabel}>
-        Toggle dark mode
-      </Typography>
-    );
+    if (!isScreenSm)
+      return (
+        <IconButton onClick={handleThemeChange}>
+          <Brightness4Icon fontSize="small" />
+        </IconButton>
+      );
+    else
+      return (
+        <FormControlLabel
+          labelPlacement="start"
+          label={
+            <Typography className={classes.darkModeSwitchLabel}>
+              {darkState ? "Toggle dark mode" : "Toggle light mode"}
+            </Typography>
+          }
+          control={
+            <Switch
+              size="small"
+              color="secondary"
+              checked={darkState}
+              onChange={handleThemeChange}
+            />
+          }
+        ></FormControlLabel>
+      );
   };
 
   return (
@@ -80,17 +98,7 @@ function App() {
                     : classes.darkModeSwitch
                 }
               >
-                <FormControlLabel
-                  label={darkSwitchLabelToggler()}
-                  control={
-                    <Switch
-                      size="small"
-                      color="secondary"
-                      checked={darkState}
-                      onChange={handleThemeChange}
-                    />
-                  }
-                ></FormControlLabel>
+                {darkSwitchLabelToggler()}
               </div>
               <MainAppBar />
             </div>
