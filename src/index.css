@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Karmatic Arcade";
+  src: local("Karmatic Arcade"),
+    url("./assets/fonts/ka1.ttf") format("truetype");
+  font-weight: normal;
+}
