@@ -7,6 +7,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import { CssBaseline, FormControlLabel, Grid } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from '@material-ui/core/styles';
 // import ReactGA from "react-ga";
 
 const useStyles = makeStyles({
@@ -22,15 +23,21 @@ const useStyles = makeStyles({
     right: "1px",
     color: "#f0f6ff",
   },
+  darkModeSwitchSm: {
+    zIndex: 1280,
+    right: "1px",
+    position: "fixed",
+    margin: "0",
+  },
 });
 
 function App() {
   // useEffect(() => {
-  //   ReactGA.initialize("G-JQVL1STPCF");
-  //   ReactGA.pageview('/')
-  //   ReactGA.pageview(window.location.pathname + window.location.search);
+  // ReactGA.initialize("G-JQVL1STPCF");
+  // ReactGA.pageview('/')
+  // ReactGA.pageview(window.location.pathname + window.location.search);
   // }, []);
- 
+
   const [darkState, setDarkState] = useState(true);
   const palletType = darkState ? "dark" : "light";
   const darkTheme = createMuiTheme({
@@ -58,7 +65,13 @@ function App() {
         <Grid container>
           <Grid item xs={12}>
             <div className={classes.appBar}>
-              <div className={classes.darkModeSwitch}>
+              <div
+                className={
+                  !isScreenSm
+                    ? classes.darkModeSwitchSm
+                    : classes.darkModeSwitch
+                }
+              >
                 <FormControlLabel
                   label={darkSwitchLabelToggler()}
                   control={
