@@ -17,7 +17,7 @@ export const stateManagementLinks = [
     url: "/state/setState",
   },
   {
-    text: "context provider",
+    text: "context API",
     url: "/state/contextProvider",
   },
   {
