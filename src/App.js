@@ -69,7 +69,7 @@ function App() {
           labelPlacement="start"
           label={
             <Typography className={classes.darkModeSwitchLabel}>
-              {darkState ? "Toggle dark mode" : "Toggle light mode"}
+              {!darkState ? "Toggle dark mode" : "Toggle light mode"}
             </Typography>
           }
           control={
