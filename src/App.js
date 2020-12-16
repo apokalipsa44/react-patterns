@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     margin: "12px",
     position: "fixed",
     right: "1px",
-    color: "#060d2e",
+    // color: "#060d2e",
     fontSize: "6px",
   },
   darkModeSwitchSm: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     margin: "8px",
   },
   darkModeSwitchLabel: {
-    color: "#49474a",
+    color: "#f0f4f5",
     fontSize: "16px",
     fontWeight: "bold",
   },
