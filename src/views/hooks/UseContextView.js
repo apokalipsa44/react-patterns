@@ -54,7 +54,7 @@ function UseContextExample() {
   );
 }
 
-export default UseContextView;
+export default UseContextExample;
 
 export function NotImportantChild() {
   return (
@@ -69,11 +69,12 @@ export function NotImportantChild() {
 export function ImportantChild() {
   const name = useContext(NameContext);
 
-  return 
-  <div>
+  return (
+     <div>
   <h3>But i did!</h3>
   <h3>Name passed from context provider: {name}</h3>
-  </div>;
+  </div>
+  );
 }`;
 
   return (
