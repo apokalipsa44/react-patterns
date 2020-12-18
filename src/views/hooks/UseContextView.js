@@ -58,7 +58,7 @@ export default UseContextExample;
 
 export function NotImportantChild() {
   return (
-    <div>
+    <div style={{backgroundColor:'#d9b041', padding:'12px'}}>
       <h3>I didn't get any props...</h3>
       <ImportantChild></ImportantChild>
       <h3>end of the first child</h3>
@@ -70,7 +70,7 @@ export function ImportantChild() {
   const name = useContext(NameContext);
 
   return (
-     <div>
+     <div style={{backgroundColor:'#f1f1f1', padding:'12px'}}>
   <h3>But i did!</h3>
   <h3>Name passed from context provider: {name}</h3>
   </div>
