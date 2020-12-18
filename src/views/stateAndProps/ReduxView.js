@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Typography, Tabs, Tab, Box } from "@material-ui/core";
-import { actionsSnippets } from "./codeSnippets/reduxSnippets/actionsSnippets";
-import { createStoreSnippets } from "./codeSnippets/reduxSnippets/createStoreSnippets";
-import { mainAppSnippets, mainAppNpms } from "./codeSnippets/reduxSnippets/mainAppSnippets";
+import { actionsSnippets } from "../stateAndProps/codeSnippets/reduxSnippets/actionsSnippets";
+import { createStoreSnippets } from "../stateAndProps/codeSnippets/reduxSnippets/createStoreSnippets";
+import { mainAppSnippets, mainAppNpms } from "../stateAndProps/codeSnippets/reduxSnippets/mainAppSnippets";
 import {
   reducersSnippetsIndex,
   reducersSnippetsCounter,
-} from "./codeSnippets/reduxSnippets/reducersSnippets";
-import { reduxFileStructure } from "./codeSnippets/reduxSnippets/reduxSkeletonSnippets";
-import { counterComponentCode } from "./codeSnippets/reduxSnippets/counterSnippets";
+} from "../stateAndProps/codeSnippets/reduxSnippets/reducersSnippets";
+import { reduxFileStructure } from "../stateAndProps/codeSnippets/reduxSnippets/reduxSkeletonSnippets";
+import { counterComponentCode } from "../stateAndProps/codeSnippets/reduxSnippets/counterSnippets";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 

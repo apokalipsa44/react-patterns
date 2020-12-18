@@ -35,7 +35,7 @@ export default class ContextProviderView extends Component {
 
   render() {
     return (
-      <Container>
+      <>
         {contextApiDescription}
         <Box mb="100px"></Box>
         <Container>
@@ -46,7 +46,7 @@ export default class ContextProviderView extends Component {
             {contextApiExampleCode}
           </SyntaxHighlighter>
         </Container>
-      </Container>
+      </>
     );
   }
 }
