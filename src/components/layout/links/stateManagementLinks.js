@@ -24,4 +24,8 @@ export const stateManagementLinks = [
     text: "redux",
     url: "/state/redux",
   },
+   {
+    text: "render props",
+    url: "/state/renderProps",
+  },
 ];

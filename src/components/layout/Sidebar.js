@@ -47,7 +47,7 @@ function Sidebar() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>State management</Typography>
+          <Typography>State and Props</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <MenuLinks linkList={stateManagementLinks} />

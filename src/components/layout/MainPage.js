@@ -14,7 +14,9 @@ import SetStateView from '../../views/stateAndProps/SetStateView'
 import ReduxView from '../../views/stateAndProps/ReduxView'
 import  Dashboard  from "../../views/Dashboard";
 
+
 import { makeStyles } from "@material-ui/core/styles";
+import RenderPropsView from "../../views/stateAndProps/RenderPropsView";
 
 
 const useStyles = makeStyles({
@@ -63,7 +65,11 @@ function MainPage() {
         </Route>
         <Route path="/state/setState" exact>
          <SetStateView/>
-        </Route><Route path="/" exact>
+        </Route> 
+         <Route path="/state/renderProps" exact>
+         <RenderPropsView/>
+        </Route>
+        <Route path="/" exact>
          <Dashboard/>
         </Route>
       </Switch>
