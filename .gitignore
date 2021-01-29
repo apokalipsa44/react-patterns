@@ -303,3 +303,6 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/java,windows,intellij
 
 zrodla-react-techniki-zaawansowane/
+/.firebase
+/firebase.json
+/.firebaserc
