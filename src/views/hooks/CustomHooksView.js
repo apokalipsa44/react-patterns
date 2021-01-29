@@ -50,13 +50,13 @@ function CustomHooksView() {
         ></HooksDescription>
       </Container>
 
-      <Box margin="150px"></Box>
+      <Box margin="100px"></Box>
 
       <Container>
       <Container>
         <Typography>
           Each Kermit has an independent "isCollapsed" state but the
-          "collapsing" logic is shared thru custom hook "useKermit".
+          "collapsing" logic is shared through custom hook "useKermit".
         </Typography>
         <Typography>
           For full kermit experience download assets{" "}

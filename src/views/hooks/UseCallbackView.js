@@ -28,7 +28,7 @@ function UseCallbackView() {
       </Container>
 
       <Container>
-        <Box m="150px"></Box>
+        <Box m="100px"></Box>
         <Typography>
           More about useMemo{" "}
           <Link to="/hooks/useMemo">

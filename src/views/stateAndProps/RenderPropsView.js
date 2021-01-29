@@ -4,7 +4,7 @@ import React from 'react'
 function RenderPropsView() {
     return (
         <Container>
-            trenddfdfj
+            render view
         </Container>
     )
 }

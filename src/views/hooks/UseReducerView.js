@@ -62,7 +62,7 @@ function UseReducerView() {
         ></HooksDescription>
       </Container>
 
-      <Box margin="150px"></Box>
+      <Box margin="100px"></Box>
       <Container>
         <TextField
           label="new todo"

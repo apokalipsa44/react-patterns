@@ -48,7 +48,7 @@ function UseStateView() {
         ></HooksDescription>
       </Container>
 
-      <Box margin="150px"></Box>
+      <Box margin="100px"></Box>
       <Container>
         <Button
           display="inline"

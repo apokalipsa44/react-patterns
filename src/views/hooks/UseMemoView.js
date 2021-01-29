@@ -80,7 +80,7 @@ function UseMemoView() {
         ></HooksDescription>
       </Container>
 
-      <Box margin="150px"></Box>
+      <Box margin="100px"></Box>
       <Container>
         <Button variant="outlined" onClick={reRenderOnClickHandle}>
           Re-render

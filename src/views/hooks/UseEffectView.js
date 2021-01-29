@@ -16,20 +16,29 @@ function UseEffectView() {
 
   const useEffectDescription = (
     <>
-      <Typography component="span">
+     <p>
+        <Typography component="span">
         It's basicity life cycle method for function components (all in one).
         Second array parameter adds magic to this. There a tree scenarios:
       </Typography>
-      <Typography component="span">
+     </p>
+     <p>
+       <Typography component="span">
         1. No array passed - will run each time component gets re-rendered
       </Typography>
-      <Typography component="span">
+     </p>
+      <p>
+        <Typography component="span">
         2. Passed empty array - act's like componentDidMount - runs only once
       </Typography>
-      <Typography component="span">
+      </p>
+      <p>
+        <Typography component="span">
         3. Passed array argument with variables - will run only when passed
         variable gets changed
       </Typography>
+      </p>
+      
     </>
   );
 
@@ -82,7 +91,7 @@ function UseEffectView() {
         ></HooksDescription>
       </Container>
 
-      <Box margin="150px"></Box>
+      <Box margin="100px"></Box>
       <Container>
         <Typography>Cat response status (default is 500): </Typography>
         <Button
