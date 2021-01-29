@@ -27,21 +27,46 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QBXM50MX6"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QBXM50MX6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
       gtag('config', 'G-6QBXM50MX6');
-    </script>
+    </script> -->
 
 
     <title>React Design Patterns</title>
+    <base href="/">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDGC0ybCsk7xGiuSzUqF9Rw4zs5ofQuu7s",
+    authDomain: "react-patterns.firebaseapp.com",
+    projectId: "react-patterns",
+    storageBucket: "react-patterns.appspot.com",
+    messagingSenderId: "390903718314",
+    appId: "1:390903718314:web:b15e301e7164f9b83a8bd3",
+    measurementId: "G-X1B8H953TD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
