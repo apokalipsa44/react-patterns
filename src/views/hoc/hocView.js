@@ -2,48 +2,57 @@ import React, { useState } from "react";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Box, Container, Typography } from "@material-ui/core";
-import {hocCode} from "./codeSnippets/HocSnippets"
+import { hocCode } from "./codeSnippets/HocSnippets";
 
- const RegularComponent = ({ hoover }) => {
+const RegularComponent = ({ hoover }) => {
   return (
-    <div style={{ backgroundColor: hoover ? "red" : "blue", width:"60%", padding:"8px" }}>
+    <div
+      style={{
+        backgroundColor: hoover ? "#bd4ebf" : "#4e72bf",
+        width: "60%",
+        padding: "8px",
+      }}
+    >
       <h2>Component without logic</h2>
       <p>Color change is made using HOC!</p>
     </div>
   );
 };
-const WithHooverDetection = detectHoover(RegularComponent);
 
- function detectHoover(Component) {
-  return function () {
-    const [hoover, setHoover] = useState(false);
-
-    return (
-      <div
+function detectHoover(Component) {
+    return function () {
+        const [hoover, setHoover] = useState(false);
+        
+        return (
+            <div
         onMouseOver={() => setHoover(true)}
         onMouseLeave={() => setHoover(false)}
       >
-        <RegularComponent hoover={hoover}  />
+        <RegularComponent hoover={hoover} />
       </div>
     );
-  };
+};
 }
 
-function HocView() {
+const WithHooverDetection = detectHoover(RegularComponent);
 
+function HocView() {
   const hocDescription = (
     <Typography component="span">
-      Decorator pattern witch wraps a component with some extra logic. Can be reused with other components.
+      Decorator pattern (function) witch wraps a component with some extra logic. Can be
+      reused with other components.
     </Typography>
   );
 
   return (
     <Container>
-    {hocDescription}
-    <Box margin="100px"></Box>
+      {hocDescription}
+      <Box margin="100px"></Box>
 
       <WithHooverDetection />
-      <SyntaxHighlighter style={atomDark} language="jsx">{hocCode}</SyntaxHighlighter>
+      <SyntaxHighlighter style={atomDark} language="jsx">
+        {hocCode}
+      </SyntaxHighlighter>
     </Container>
   );
 }

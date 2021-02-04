@@ -3,13 +3,11 @@ export  const hocCode = `import React, { useState } from "react";
 const RegularComponent = ({hoover}) => {
 
     return (
-        <div style={{ backgroundColor: hoover ? "red" : "blue", width:"60%", padding:"8px" }}>
+        <div style={{ backgroundColor: hoover ? "red" : "blue" }}>
           <h2>Component without logic</h2>
           <p>Color change is made using HOC!</p>
         </div>
       );
-
-const WithHooverDetection = detectHoover(RegularComponent)
 
 function detectHoover (Component) {
     return function () {
@@ -25,6 +23,8 @@ function detectHoover (Component) {
       );
     };
   };
+
+const WithHooverDetection = detectHoover(RegularComponent)
 
 
 function HocExample() {
