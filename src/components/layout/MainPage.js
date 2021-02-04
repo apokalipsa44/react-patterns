@@ -9,14 +9,14 @@ import UseReducerView from "../../views/hooks/UseReducerView";
 import UseReduxView from "../../views/hooks/UseReduxView";
 import UseRefsView from "../../views/hooks/UseRefsView";
 import UseStateView from "../../views/hooks/UseStateView";
-import ContextProviderView from '../../views/stateAndProps/ContextProviderView'
-import SetStateView from '../../views/stateAndProps/SetStateView'
-import ReduxView from '../../views/stateAndProps/ReduxView'
-import  Dashboard  from "../../views/Dashboard";
-
+import ContextProviderView from "../../views/stateAndProps/ContextProviderView";
+import SetStateView from "../../views/stateAndProps/SetStateView";
+import ReduxView from "../../views/stateAndProps/ReduxView";
+import Dashboard from "../../views/Dashboard";
+import HocView from "../../views/hoc/hocView";
+import RenderPropsView from "../../views/hoc/RenderPropsView";
 
 import { makeStyles } from "@material-ui/core/styles";
-import RenderPropsView from "../../views/stateAndProps/RenderPropsView";
 
 
 const useStyles = makeStyles({
@@ -26,9 +26,9 @@ const useStyles = makeStyles({
 });
 
 function MainPage() {
-  const classes=useStyles()
+  const classes = useStyles();
   return (
-    <div >
+    <div>
       <Switch>
         <Route path="/hooks/useState" exact>
           <UseStateView></UseStateView>
@@ -58,19 +58,22 @@ function MainPage() {
           <UseCallbackView></UseCallbackView>
         </Route>
         <Route path="/state/contextProvider" exact>
-          <ContextProviderView/>
+          <ContextProviderView />
         </Route>
         <Route path="/state/redux" exact>
-          <ReduxView/>
+          <ReduxView />
         </Route>
         <Route path="/state/setState" exact>
-         <SetStateView/>
-        </Route> 
-         <Route path="/state/renderProps" exact>
-         <RenderPropsView/>
+          <SetStateView />
+        </Route>
+        <Route path="/patterns/renderProps" exact>
+          <RenderPropsView />
+        </Route>
+        <Route path="/patterns/hoc" exact>
+          <HocView/>
         </Route>
         <Route path="/" exact>
-         <Dashboard/>
+          <Dashboard />
         </Route>
       </Switch>
     </div>
