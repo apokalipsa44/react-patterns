@@ -12,11 +12,10 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuLinks from "./MenuLinks";
 import { hooksLinks } from "./links/hooksLinks";
-import { stateManagementLinks  } from "./links/stateManagementLinks";
-
+import { stateManagementLinks } from "./links/stateManagementLinks";
+import { hocAndRenderPropsLinks } from "./links/hocAndRenderPropsLinks";
 
 const useStyles = makeStyles({
- 
   topSpacer: {
     height: "80px",
   },
@@ -25,8 +24,7 @@ const useStyles = makeStyles({
 function Sidebar() {
   const classes = useStyles();
   return (
-    <div >
-      
+    <div>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -51,6 +49,19 @@ function Sidebar() {
         </AccordionSummary>
         <AccordionDetails>
           <MenuLinks linkList={stateManagementLinks} />
+        </AccordionDetails>
+      </Accordion>
+      <Divider />
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>HOC and Render-Props</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <MenuLinks linkList={hocAndRenderPropsLinks} />
         </AccordionDetails>
       </Accordion>
     </div>
